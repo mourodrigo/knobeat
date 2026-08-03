@@ -1,6 +1,6 @@
 #!/bin/bash
 # Build script for KnobeatMIDI without Xcode
-# Requires: Swift toolchain installed (download from swift.org)
+# Requires: Xcode Command Line Tools (not full Xcode)
 
 set -e
 
@@ -11,9 +11,25 @@ echo ""
 if ! command -v swift &> /dev/null; then
     echo "❌ Error: Swift compiler not found!"
     echo ""
-    echo "To build without Xcode, you need to install the Swift toolchain:"
-    echo "1. Download from: https://www.swift.org/download/"
-    echo "2. Or install via Homebrew: brew install swift"
+    echo "To build without Xcode, you need to install Xcode Command Line Tools:"
+    echo "  xcode-select --install"
+    echo ""
+    echo "Alternative: Install via Homebrew: brew install swift"
+    echo ""
+    exit 1
+fi
+
+# Check if Command Line Tools are installed
+if ! xcode-select -p &> /dev/null; then
+    echo "❌ Error: Xcode Command Line Tools not found!"
+    echo ""
+    echo "Swift Package Manager requires Apple's Command Line Tools to build on macOS."
+    echo "This is much smaller than full Xcode (~1-2 GB vs 12+ GB)."
+    echo ""
+    echo "To install Command Line Tools:"
+    echo "  xcode-select --install"
+    echo ""
+    echo "After installation, run this script again."
     echo ""
     exit 1
 fi

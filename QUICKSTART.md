@@ -2,11 +2,12 @@
 
 ## Prerequisites
 ```bash
-# Install Swift via Homebrew
-brew install swift
+# Install Xcode Command Line Tools (NOT full Xcode)
+xcode-select --install
 
-# Or download from swift.org
-# https://www.swift.org/download/
+# Verify installation
+xcode-select -p
+swift --version
 ```
 
 ## Build Commands
@@ -36,8 +37,16 @@ KnobeatMIDI
 ## Requirements
 
 - macOS 13.0+ (Ventura or later)
-- Swift 5.9+ (comes with Xcode Command Line Tools or standalone Swift toolchain)
-- No Xcode installation required!
+- Xcode Command Line Tools (install with: `xcode-select --install`)
+- **No full Xcode installation required!** (saves ~10 GB)
+
+## Common Issues
+
+### Error: "xcrun: error: unable to find utility 'xctest'"
+You need Command Line Tools:
+```bash
+xcode-select --install
+```
 
 ## Full Documentation
 

@@ -1,26 +1,42 @@
 # Building KnobeatMIDI Without Xcode
 
-This guide explains how to build and run KnobeatMIDI on macOS without installing Xcode.
+This guide explains how to build and run KnobeatMIDI on macOS without installing the full Xcode IDE.
+
+## Important: Command Line Tools Required
+
+While you don't need the full Xcode IDE (~12+ GB), Swift Package Manager on macOS requires **Xcode Command Line Tools** (~1-2 GB). This includes:
+- Swift compiler
+- Build tools (xcrun, xcodebuild utilities)
+- macOS SDK headers
+- Linker and other essential tools
+
+**This is not the same as full Xcode** - it's much smaller and installs quickly.
 
 ## Prerequisites
 
-### Install Swift Toolchain
+### Install Xcode Command Line Tools
 
-You need the Swift compiler, which can be installed without Xcode:
-
-**Option 1: Homebrew (Recommended)**
+**Option 1: Using xcode-select (Recommended)**
 ```bash
-brew install swift
+xcode-select --install
 ```
 
-**Option 2: Official Swift Toolchain**
-1. Visit [swift.org/download](https://www.swift.org/download/)
-2. Download the Swift toolchain for macOS
-3. Install the .pkg file
-4. Verify installation:
-   ```bash
-   swift --version
-   ```
+This will open a dialog to download and install Command Line Tools.
+
+**Option 2: Download from Apple**
+1. Visit [developer.apple.com/downloads](https://developer.apple.com/downloads)
+2. Sign in with your Apple ID (free account works)
+3. Search for "Command Line Tools for Xcode"
+4. Download the version matching your macOS
+
+**Verify Installation:**
+```bash
+xcode-select -p
+# Should output: /Library/Developer/CommandLineTools
+
+swift --version
+# Should show Swift version
+```
 
 ### System Requirements
 - macOS 13.0 (Ventura) or later
@@ -103,6 +119,38 @@ The only difference from Xcode builds:
 The MIDI, audio, and UI functionality are identical.
 
 ## Troubleshooting
+
+### Error: "xcrun: error: unable to find utility 'xctest'"
+
+**Problem:**
+```
+error: terminated(72): /usr/bin/xcrun --sdk macosx --find xctest output:
+    xcrun: error: unable to find utility "xctest", not a developer tool or in PATH
+```
+
+**Cause:** Xcode Command Line Tools are not installed.
+
+**Solution:**
+```bash
+# Install Command Line Tools
+xcode-select --install
+
+# After installation, verify
+xcode-select -p
+# Should show: /Library/Developer/CommandLineTools
+
+# Then rebuild
+./build.sh
+```
+
+If you already have Command Line Tools but still get this error:
+```bash
+# Reset the tools path
+sudo xcode-select --reset
+
+# Or if you have Xcode installed, point to it
+sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+```
 
 ### Swift Not Found
 
