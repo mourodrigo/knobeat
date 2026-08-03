@@ -1,0 +1,62 @@
+name: Build without Xcode
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build with Swift Package Manager
+    runs-on: macos-13
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Show Swift version
+      run: swift --version
+    
+    - name: Validate Package.swift
+      run: swift package dump-package
+    
+    - name: Build (Debug)
+      run: swift build
+    
+    - name: Build (Release)
+      run: swift build -c release
+    
+    - name: Verify executable
+      run: |
+        ls -lh .build/release/KnobeatMIDI
+        file .build/release/KnobeatMIDI
+        otool -L .build/release/KnobeatMIDI || true
+    
+    - name: Test build script
+      run: |
+        chmod +x build.sh
+        ./build.sh
+    
+    - name: Test Makefile
+      run: make build
+
+  build-macos-14:
+    name: Build on macOS 14 (Sonoma)
+    runs-on: macos-14
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Show Swift version
+      run: swift --version
+    
+    - name: Build (Release)
+      run: swift build -c release
+    
+    - name: Verify executable
+      run: |
+        ls -lh .build/release/KnobeatMIDI
+        file .build/release/KnobeatMIDI
