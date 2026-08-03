@@ -2,6 +2,8 @@
 
 A native macOS diagnostic tool for detecting, monitoring, and testing MIDI devices, with specific support for the Pioneer DDJ-SR DJ controller.
 
+> **🚀 New: Build without Xcode!** You can now build and run this app using just the Swift command-line tools. See [BUILD.md](BUILD.md) for detailed instructions.
+
 ## Overview
 
 KnobeatMIDI is Step 1 of a larger multiplatform synthesizer project. This tool provides deep visibility into MIDI I/O and audio routing, helping you understand how the Pioneer DDJ-SR communicates and responds to MIDI messages.
@@ -48,21 +50,54 @@ KnobeatMIDI is Step 1 of a larger multiplatform synthesizer project. This tool p
 ## Requirements
 
 - **macOS:** 13.0 (Ventura) or later
-- **Xcode:** 15.0 or later for building
+- **Swift:** 5.9 or later
+  - **Option 1 (Xcode):** Install Xcode 15.0 or later from the Mac App Store
+  - **Option 2 (Swift Toolchain):** Download Swift from [swift.org](https://www.swift.org/download/) or install via Homebrew: `brew install swift`
 - **Hardware:** Pioneer DDJ-SR (or any MIDI controller for basic testing)
 
 ## Building and Running
 
-### From Xcode
+### Option 1: Build without Xcode (Command Line)
+
+**Quick Start:**
+```bash
+# Using the build script
+./build.sh
+
+# Or using make
+make build
+make run
+```
+
+**Manual Build:**
+```bash
+# Build with Swift Package Manager
+swift build -c release
+
+# Run the executable
+./.build/release/KnobeatMIDI
+```
+
+**Install System-Wide:**
+```bash
+make install
+# Then run from anywhere:
+KnobeatMIDI
+```
+
+**Note:** When built via command line, the app runs as a native executable. The SwiftUI interface will launch normally, but it won't be packaged as a traditional .app bundle unless you use Xcode.
+
+### Option 2: Build with Xcode (Traditional)
 1. Open `KnobeatMIDI/KnobeatMIDI.xcodeproj` in Xcode
 2. Select your Mac as the build target
 3. Press ⌘R to build and run
 4. The app will launch and immediately start scanning for MIDI devices
 
 ### Build Configuration
-- **Language:** Swift 5.0
+- **Language:** Swift 5.9
 - **Frameworks:** CoreMIDI, AVFoundation, Core Audio, SwiftUI
 - **No external dependencies** - uses only Apple frameworks
+- **Build System:** Swift Package Manager (command line) or Xcode (IDE)
 
 ## How It Works
 
