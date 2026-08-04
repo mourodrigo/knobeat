@@ -39,6 +39,43 @@ echo "Swift version:"
 swift --version
 echo ""
 
+# Check Swift version (need 5.9+)
+SWIFT_VERSION=$(swift --version | head -n 1 | sed -n 's/.*Swift version \([0-9]*\.[0-9]*\).*/\1/p')
+SWIFT_MAJOR=$(echo $SWIFT_VERSION | cut -d. -f1)
+SWIFT_MINOR=$(echo $SWIFT_VERSION | cut -d. -f2)
+
+if [ "$SWIFT_MAJOR" -lt 5 ] || ([ "$SWIFT_MAJOR" -eq 5 ] && [ "$SWIFT_MINOR" -lt 9 ]); then
+    echo "❌ Error: Swift version $SWIFT_VERSION is too old!"
+    echo ""
+    echo "This project requires Swift 5.9 or later, but you have Swift $SWIFT_VERSION."
+    echo ""
+    echo "Your Command Line Tools are from an older macOS version."
+    echo "To update to a newer Swift version, you need to:"
+    echo ""
+    echo "Option 1: Update your macOS to the latest version"
+    echo "  - This will also update Command Line Tools and Swift"
+    echo ""
+    echo "Option 2: Update Command Line Tools"
+    echo "  1. Check your macOS version: sw_vers"
+    echo "  2. Download matching Command Line Tools from:"
+    echo "     https://developer.apple.com/download/all/"
+    echo "  3. Install the latest version for your macOS"
+    echo ""
+    echo "Option 3: Install Xcode (includes latest Swift)"
+    echo "  - Download from Mac App Store"
+    echo "  - Then run: sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer"
+    echo ""
+    echo "Swift version requirements:"
+    echo "  - macOS 13 (Ventura): Swift 5.9+"
+    echo "  - macOS 12 (Monterey): Swift 5.7+"
+    echo "  - macOS 11 (Big Sur): Swift 5.5+"
+    echo ""
+    exit 1
+fi
+
+echo "✅ Swift version check passed (requires 5.9+)"
+echo ""
+
 # Build the project
 echo "Building..."
 swift build -c release

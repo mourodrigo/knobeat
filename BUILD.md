@@ -120,7 +120,61 @@ The MIDI, audio, and UI functionality are identical.
 
 ## Troubleshooting
 
-### Error: "xcrun: error: unable to find utility 'xctest'"
+### Error: "xcrun: error: unable to find utility 'xctest'" with Old Swift Version
+
+**Problem:**
+```
+Swift version 5.4.2 (or older)
+error: terminated(72): /usr/bin/xcrun --sdk macosx --find xctest output:
+    xcrun: error: unable to find utility "xctest", not a developer tool or in PATH
+```
+
+**Cause:** Your Swift version is too old. This project requires Swift 5.9+, which comes with macOS 13 (Ventura) or later Command Line Tools.
+
+**Check your versions:**
+```bash
+swift --version
+# You need: Swift 5.9 or later
+# If you see: Swift 5.4.x, 5.5.x, etc. - too old
+
+sw_vers
+# Check your macOS version
+```
+
+**Solution - Choose based on your macOS version:**
+
+**If you're on macOS 13 (Ventura) or later:**
+```bash
+# Update Command Line Tools
+sudo rm -rf /Library/Developer/CommandLineTools
+xcode-select --install
+```
+
+**If you're on macOS 12 (Monterey) or earlier:**
+
+You have three options:
+
+1. **Upgrade macOS (Recommended)**
+   - Upgrade to macOS 13 (Ventura) or later
+   - Then install latest Command Line Tools: `xcode-select --install`
+
+2. **Install full Xcode**
+   - Download Xcode 15+ from Mac App Store
+   - Run: `sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer`
+   - This gives you the latest Swift even on older macOS
+
+3. **Try lowering Swift version requirement** (Advanced)
+   - Edit `Package.swift` and change `// swift-tools-version: 5.9` to match your Swift version
+   - Note: This may cause compilation errors if the code uses newer Swift features
+
+**Swift Version by macOS:**
+- macOS 14 (Sonoma): Swift 5.9+
+- macOS 13 (Ventura): Swift 5.7-5.9
+- macOS 12 (Monterey): Swift 5.5-5.7
+- macOS 11 (Big Sur): Swift 5.3-5.5
+- macOS 10.15 (Catalina): Swift 5.1-5.3
+
+### Error: "xcrun: error: unable to find utility 'xctest'" with Command Line Tools Missing
 
 **Problem:**
 ```

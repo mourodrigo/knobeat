@@ -51,11 +51,11 @@ KnobeatMIDI is Step 1 of a larger multiplatform synthesizer project. This tool p
 
 - **macOS:** 13.0 (Ventura) or later
 - **Build Tools (choose one):**
-  - **Option 1 (No Xcode):** Xcode Command Line Tools - Install with `xcode-select --install` (~1-2 GB)
+  - **Option 1 (No Xcode):** Xcode Command Line Tools with Swift 5.9+ - Install with `xcode-select --install` (~1-2 GB)
   - **Option 2 (Full IDE):** Xcode 15.0 or later from the Mac App Store (~12+ GB)
 - **Hardware:** Pioneer DDJ-SR (or any MIDI controller for basic testing)
 
-> **Note:** To build without full Xcode, you still need Apple's Command Line Tools, which include Swift and the build infrastructure. This is much smaller than full Xcode.
+> **Note:** To build without full Xcode, you need Command Line Tools that include Swift 5.9+. Older macOS versions come with older Swift versions. See [BUILD.md](BUILD.md) for details on updating or working with older macOS versions.
 
 ## Building and Running
 
