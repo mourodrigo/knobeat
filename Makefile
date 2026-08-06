@@ -18,7 +18,7 @@ help:
 # Build the project
 build:
 	@echo "🔨 Building KnobeatMIDI..."
-	swift build -c release --disable-xctest
+	swift build -c release
 	@echo "✅ Build complete: .build/release/KnobeatMIDI"
 
 # Run the application

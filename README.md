@@ -80,7 +80,7 @@ make run
 **Manual Build:**
 ```bash
 # Build with Swift Package Manager
-swift build -c release --disable-xctest
+swift build -c release
 
 # Run the executable
 ./.build/release/KnobeatMIDI

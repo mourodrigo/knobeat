@@ -81,16 +81,14 @@ If you prefer to use Swift Package Manager directly:
 
 ```bash
 # Debug build
-swift build --disable-xctest
+swift build
 
 # Release build (optimized)
-swift build -c release --disable-xctest
+swift build -c release
 
 # Run the executable
 ./.build/release/KnobeatMIDI
 ```
-
-**Note:** The `--disable-xctest` flag prevents XCTest-related errors on systems where the xctest utility is not available or not needed (this package has no tests).
 
 ## Running the Application
 
@@ -184,12 +182,11 @@ error: terminated(72): /usr/bin/xcrun --sdk macosx --find xctest output:
     xcrun: error: unable to find utility "xctest", not a developer tool or in PATH
 ```
 
-**Cause:** Either Xcode Command Line Tools are not installed, or Swift Package Manager is trying to use xctest even though this package has no tests.
+**Cause:** Xcode Command Line Tools are not installed properly, or you're using an older Swift version (5.5.x) that has issues with xctest on some systems.
 
 **Solution:**
 
 **Option 1: Use the build script or Makefile (Recommended)**
-The build script and Makefile automatically include the `--disable-xctest` flag:
 ```bash
 # Using build script
 ./build.sh
@@ -211,11 +208,10 @@ xcode-select -p
 ./build.sh
 ```
 
-**Option 3: Manual build with correct flag**
-If building manually with Swift Package Manager, always include `--disable-xctest`:
-```bash
-swift build -c release --disable-xctest
-```
+**Option 3: Upgrade to newer Swift/macOS**
+The xctest error is common on older Swift versions (5.5.x and earlier). Consider:
+- Upgrading to macOS 13+ (includes Swift 5.9+)
+- Installing full Xcode for latest Swift version
 
 If you already have Command Line Tools but still get this error:
 ```bash
