@@ -78,7 +78,7 @@ echo ""
 
 # Build the project
 echo "Building..."
-swift build -c release --disable-sandbox
+swift build -c release --disable-xctest
 
 # Check if build succeeded
 if [ $? -eq 0 ]; then
