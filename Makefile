@@ -13,12 +13,12 @@ help:
 	@echo ""
 	@echo "Requirements:"
 	@echo "  - Swift toolchain (download from swift.org or install via Homebrew)"
-	@echo "  - macOS 13.0 (Ventura) or later"
+	@echo "  - macOS 11.0 (Big Sur) or later"
 
 # Build the project
 build:
 	@echo "🔨 Building KnobeatMIDI..."
-	swift build -c release
+	swift build -c release --disable-xctest
 	@echo "✅ Build complete: .build/release/KnobeatMIDI"
 
 # Run the application
