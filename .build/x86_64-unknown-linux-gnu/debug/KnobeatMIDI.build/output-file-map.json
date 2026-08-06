@@ -1,0 +1,61 @@
+{
+  "": {
+    "swift-dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/primary.swiftdeps"
+  },
+  "/home/runner/work/knobeat/knobeat/KnobeatMIDI/KnobeatMIDI/ContentView.swift": {
+    "dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/ContentView.d",
+    "object": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/ContentView.swift.o",
+    "swiftmodule": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/ContentView~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/ContentView.swiftdeps",
+    "diagnostics": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/ContentView.dia"
+  },
+  "/home/runner/work/knobeat/knobeat/KnobeatMIDI/KnobeatMIDI/KnobeatMIDIApp.swift": {
+    "dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/KnobeatMIDIApp.d",
+    "object": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/KnobeatMIDIApp.swift.o",
+    "swiftmodule": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/KnobeatMIDIApp~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/KnobeatMIDIApp.swiftdeps",
+    "diagnostics": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/KnobeatMIDIApp.dia"
+  },
+  "/home/runner/work/knobeat/knobeat/KnobeatMIDI/KnobeatMIDI/Models/AudioManager.swift": {
+    "dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/AudioManager.d",
+    "object": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/AudioManager.swift.o",
+    "swiftmodule": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/AudioManager~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/AudioManager.swiftdeps",
+    "diagnostics": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/AudioManager.dia"
+  },
+  "/home/runner/work/knobeat/knobeat/KnobeatMIDI/KnobeatMIDI/Models/DDJSRMappings.swift": {
+    "dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/DDJSRMappings.d",
+    "object": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/DDJSRMappings.swift.o",
+    "swiftmodule": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/DDJSRMappings~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/DDJSRMappings.swiftdeps",
+    "diagnostics": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/DDJSRMappings.dia"
+  },
+  "/home/runner/work/knobeat/knobeat/KnobeatMIDI/KnobeatMIDI/Models/MIDIManager.swift": {
+    "dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/MIDIManager.d",
+    "object": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/MIDIManager.swift.o",
+    "swiftmodule": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/MIDIManager~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/MIDIManager.swiftdeps",
+    "diagnostics": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/MIDIManager.dia"
+  },
+  "/home/runner/work/knobeat/knobeat/KnobeatMIDI/KnobeatMIDI/Views/AudioIOView.swift": {
+    "dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/AudioIOView.d",
+    "object": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/AudioIOView.swift.o",
+    "swiftmodule": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/AudioIOView~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/AudioIOView.swiftdeps",
+    "diagnostics": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/AudioIOView.dia"
+  },
+  "/home/runner/work/knobeat/knobeat/KnobeatMIDI/KnobeatMIDI/Views/MIDIInputView.swift": {
+    "dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/MIDIInputView.d",
+    "object": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/MIDIInputView.swift.o",
+    "swiftmodule": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/MIDIInputView~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/MIDIInputView.swiftdeps",
+    "diagnostics": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/MIDIInputView.dia"
+  },
+  "/home/runner/work/knobeat/knobeat/KnobeatMIDI/KnobeatMIDI/Views/MIDIOutputView.swift": {
+    "dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/MIDIOutputView.d",
+    "object": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/MIDIOutputView.swift.o",
+    "swiftmodule": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/MIDIOutputView~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/MIDIOutputView.swiftdeps",
+    "diagnostics": "/home/runner/work/knobeat/knobeat/.build/x86_64-unknown-linux-gnu/debug/KnobeatMIDI.build/MIDIOutputView.dia"
+  }
+}

@@ -211,22 +211,18 @@ struct DDJSRTestSection: View {
                     Button("Deck A Play") {
                         sendControlMessage(DDJSRMappings.DeckATransport.play, value: 0x7F)
                     }
-                    .buttonStyle(.bordered)
                     
                     Button("Deck A Cue") {
                         sendControlMessage(DDJSRMappings.DeckATransport.cue, value: 0x7F)
                     }
-                    .buttonStyle(.bordered)
                     
                     Button("Deck B Play") {
                         sendControlMessage(DDJSRMappings.DeckBTransport.play, value: 0x7F)
                     }
-                    .buttonStyle(.bordered)
                     
                     Button("Deck B Cue") {
                         sendControlMessage(DDJSRMappings.DeckBTransport.cue, value: 0x7F)
                     }
-                    .buttonStyle(.bordered)
                 }
             }
         }
@@ -355,7 +351,9 @@ struct ManualMessageSection: View {
                     Label("Send Message", systemImage: "paperplane.fill")
                         .frame(maxWidth: 200)
                 }
-                .buttonStyle(.borderedProminent)
+                .foregroundColor(.white)
+                .background(Color.accentColor)
+                .cornerRadius(8)
                 .disabled(midiManager.selectedDestinationIndex == nil)
             }
         }

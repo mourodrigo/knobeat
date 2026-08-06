@@ -108,8 +108,9 @@ struct AudioIOView: View {
                             Label("Stop Passthrough", systemImage: "stop.fill")
                                 .frame(width: 200)
                         }
-                        .buttonStyle(.borderedProminent)
-                        .tint(.red)
+                        .foregroundColor(.white)
+                        .background(Color.red)
+                        .cornerRadius(8)
                     } else {
                         Button(action: {
                             audioManager.startPassthrough()
@@ -117,7 +118,9 @@ struct AudioIOView: View {
                             Label("Start Passthrough", systemImage: "play.fill")
                                 .frame(width: 200)
                         }
-                        .buttonStyle(.borderedProminent)
+                        .foregroundColor(.white)
+                        .background(Color.accentColor)
+                        .cornerRadius(8)
                         .disabled(audioManager.selectedInputDevice == nil || 
                                 audioManager.selectedOutputDevice == nil)
                     }
