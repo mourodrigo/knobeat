@@ -268,16 +268,14 @@ If you get "swift: command not found":
 
 ```bash
 # Build for specific architecture
-swift build -c release --arch arm64 --disable-xctest
+swift build -c release --arch arm64
 
 # Build with debug symbols
-swift build -c release -Xswiftc -g --disable-xctest
+swift build -c release -Xswiftc -g
 
 # Verbose output
-swift build -c release -v --disable-xctest
+swift build -c release -v
 ```
-
-**Note:** Always include `--disable-xctest` when building manually to avoid xctest-related errors.
 
 ### Development Workflow
 
