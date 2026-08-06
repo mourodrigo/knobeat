@@ -24,7 +24,7 @@ See troubleshooting below.
 make build
 
 # Manual SPM build
-swift build -c release
+swift build -c release --disable-xctest
 ```
 
 ## Run

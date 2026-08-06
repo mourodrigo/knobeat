@@ -81,14 +81,16 @@ If you prefer to use Swift Package Manager directly:
 
 ```bash
 # Debug build
-swift build
+swift build --disable-xctest
 
 # Release build (optimized)
-swift build -c release
+swift build -c release --disable-xctest
 
 # Run the executable
 ./.build/release/KnobeatMIDI
 ```
+
+**Note:** The `--disable-xctest` flag prevents XCTest-related errors on systems where the xctest utility is not available or not needed (this package has no tests).
 
 ## Running the Application
 
@@ -182,9 +184,21 @@ error: terminated(72): /usr/bin/xcrun --sdk macosx --find xctest output:
     xcrun: error: unable to find utility "xctest", not a developer tool or in PATH
 ```
 
-**Cause:** Xcode Command Line Tools are not installed.
+**Cause:** Either Xcode Command Line Tools are not installed, or Swift Package Manager is trying to use xctest even though this package has no tests.
 
 **Solution:**
+
+**Option 1: Use the build script or Makefile (Recommended)**
+The build script and Makefile automatically include the `--disable-xctest` flag:
+```bash
+# Using build script
+./build.sh
+
+# Or using make
+make build
+```
+
+**Option 2: Install/Reinstall Command Line Tools**
 ```bash
 # Install Command Line Tools
 xcode-select --install
@@ -195,6 +209,12 @@ xcode-select -p
 
 # Then rebuild
 ./build.sh
+```
+
+**Option 3: Manual build with correct flag**
+If building manually with Swift Package Manager, always include `--disable-xctest`:
+```bash
+swift build -c release --disable-xctest
 ```
 
 If you already have Command Line Tools but still get this error:
@@ -252,14 +272,16 @@ If you get "swift: command not found":
 
 ```bash
 # Build for specific architecture
-swift build -c release --arch arm64
+swift build -c release --arch arm64 --disable-xctest
 
 # Build with debug symbols
-swift build -c release -Xswiftc -g
+swift build -c release -Xswiftc -g --disable-xctest
 
 # Verbose output
-swift build -c release -v
+swift build -c release -v --disable-xctest
 ```
+
+**Note:** Always include `--disable-xctest` when building manually to avoid xctest-related errors.
 
 ### Development Workflow
 
