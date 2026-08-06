@@ -275,8 +275,10 @@ struct LevelMeter: View {
     }
 }
 
-#Preview {
-    AudioIOView()
-        .environmentObject(AudioManager())
-        .frame(width: 800, height: 600)
+struct AudioIOView_Previews: PreviewProvider {
+    static var previews: some View {
+        AudioIOView()
+            .environmentObject(AudioManager())
+            .frame(width: 800, height: 600)
+    }
 }

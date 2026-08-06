@@ -383,8 +383,10 @@ struct ManualMessageSection: View {
     }
 }
 
-#Preview {
-    MIDIOutputView()
-        .environmentObject(MIDIManager())
-        .frame(width: 800, height: 600)
+struct MIDIOutputView_Previews: PreviewProvider {
+    static var previews: some View {
+        MIDIOutputView()
+            .environmentObject(MIDIManager())
+            .frame(width: 800, height: 600)
+    }
 }

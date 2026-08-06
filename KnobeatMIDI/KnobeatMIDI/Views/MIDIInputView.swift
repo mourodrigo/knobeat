@@ -182,8 +182,10 @@ struct MessageRow: View {
     }
 }
 
-#Preview {
-    MIDIInputView()
-        .environmentObject(MIDIManager())
-        .frame(width: 800, height: 600)
+struct MIDIInputView_Previews: PreviewProvider {
+    static var previews: some View {
+        MIDIInputView()
+            .environmentObject(MIDIManager())
+            .frame(width: 800, height: 600)
+    }
 }

@@ -32,8 +32,10 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-        .environmentObject(MIDIManager())
-        .environmentObject(AudioManager())
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .environmentObject(MIDIManager())
+            .environmentObject(AudioManager())
+    }
 }

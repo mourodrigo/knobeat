@@ -19,7 +19,5 @@ struct KnobeatMIDIApp: App {
                 .environmentObject(audioManager)
                 .frame(minWidth: 900, minHeight: 700)
         }
-        .windowStyle(.hiddenTitleBar)
-        .windowResizability(.contentSize)
     }
 }
