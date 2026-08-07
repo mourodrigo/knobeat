@@ -1,15 +1,16 @@
-.PHONY: build clean run install help
+.PHONY: build build-no-tests clean run install help
 
 # Default target
 help:
 	@echo "KnobeatMIDI - Build without Xcode"
 	@echo ""
 	@echo "Available targets:"
-	@echo "  make build    - Build the project using Swift Package Manager"
-	@echo "  make run      - Build and run the application"
-	@echo "  make clean    - Clean build artifacts"
-	@echo "  make install  - Install to /usr/local/bin (requires sudo)"
-	@echo "  make help     - Show this help message"
+	@echo "  make build           - Build the project using Swift Package Manager"
+	@echo "  make build-no-tests  - Build without test targets (CLT-only / no full Xcode)"
+	@echo "  make run             - Build and run the application"
+	@echo "  make clean           - Clean build artifacts"
+	@echo "  make install         - Install to /usr/local/bin (requires sudo)"
+	@echo "  make help            - Show this help message"
 	@echo ""
 	@echo "Requirements:"
 	@echo "  - Swift toolchain (download from swift.org or install via Homebrew)"
@@ -19,6 +20,12 @@ help:
 build:
 	@echo "🔨 Building KnobeatMIDI..."
 	swift build -c release
+	@echo "✅ Build complete: .build/release/KnobeatMIDI"
+
+# Build without test targets (for macOS CLT-only environments without full Xcode)
+build-no-tests:
+	@echo "🔨 Building KnobeatMIDI (no test targets)..."
+	KNOBEAT_NO_TESTS=1 swift build -c release
 	@echo "✅ Build complete: .build/release/KnobeatMIDI"
 
 # Run the application

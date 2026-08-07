@@ -76,6 +76,15 @@ fi
 echo "✅ Swift version check passed (requires 5.5+)"
 echo ""
 
+# Detect CLT-only environment (no full Xcode) and set KNOBEAT_NO_TESTS=1
+# to avoid `xcrun: unable to find utility "xctest"` errors during build.
+if ! xcrun --sdk macosx --find xctest &> /dev/null; then
+    echo "ℹ️  xctest not available (CLT-only environment). Building without test targets."
+    echo "   Set KNOBEAT_NO_TESTS=1 manually to suppress this message."
+    echo ""
+    export KNOBEAT_NO_TESTS=1
+fi
+
 # Build the project
 echo "Building..."
 swift build -c release
